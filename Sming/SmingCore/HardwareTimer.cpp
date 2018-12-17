@@ -78,7 +78,9 @@ HardwareTimer::HardwareTimer()
 {
 	assert(isrTimer == nullptr);
 	isrTimer = this;
-	ETS_FRC_TIMER1_NMI_INTR_ATTACH(hw_timer_isr_cb);
+	// ETS_FRC_TIMER1_NMI_INTR_ATTACH(hw_timer_isr_cb);
+	ETS_FRC_TIMER1_INTR_ATTACH((ets_isr_t)hw_timer_isr_cb, nullptr);
+
 }
 
 HardwareTimer::~HardwareTimer()
