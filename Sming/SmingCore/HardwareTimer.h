@@ -135,7 +135,7 @@ public:
 
 private:
 	uint32_t interval = 0;
-	InterruptCallback IRAM_ATTR callback = nullptr;
+	InterruptCallback callback = nullptr;
 	bool repeating = false;
 	bool started = false;
 };
